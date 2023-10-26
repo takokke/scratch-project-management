@@ -1,0 +1,27 @@
+<h2>生徒のプロジェクト一覧<h2>
+<div>
+  <p><%= @student.name %></p>
+  <p><%= @student.scratch_username %></p>
+</div>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>プロジェクト名</th>
+        <th>作成日</th>
+        <th>更新日</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @projects.each do |project| %>
+      <tr>
+        <td><%= image_tag project['image'] %></td>
+        <td><%= project['title'] %></td>
+        <td><%= project['history']['created'] %></td>
+        <td><%= project['history']['modified'] %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

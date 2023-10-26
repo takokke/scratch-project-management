@@ -1,0 +1,18 @@
+<h2>生徒情報変更</h2>
+<%= form_with model: @student, local: true do |f| %>
+  <div>
+    <%= f.label :scratch_username, 'Scratchユーザー名' %>
+  </div>
+  <div>
+    <%= f.text_field :scratch_username %>
+  </div>
+  <div>
+    <%= f.label :name, '生徒氏名' %>
+  </div>
+  <div>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.submit '更新' %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<h2>生徒一覧</h2>
+<table>
+  <thead>
+    <tr>
+      <th>scratchアカウント</th>
+      <th>氏名</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @students.each do |student| %>
+    <tr>
+      <td>
+        <%= link_to student_path(student.id) do %>
+          <%= student.scratch_username %>
+        <% end %>
+      </td>
+      <td><%= student.name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

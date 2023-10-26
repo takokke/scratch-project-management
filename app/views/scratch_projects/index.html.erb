@@ -1,0 +1,8 @@
+<h1>プロジェクト一覧</h1>
+<h3>最新の順番だとなお良い</h3>
+<% @projects_of_all.each do |projects_of_one| %>
+  <% projects_of_one.each do |project| %>
+    <div><%= project['title'] %></div>
+    <div><%= image_tag project['images']["282x218"] %></div>
+  <% end %>
+<% end %>
