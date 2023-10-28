@@ -1,5 +1,69 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import 'reset';
+
+
+body {
+  line-height: 1.5;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+//マップ型変数breakpointsを定義
+$breakpoints: (
+//キー:値
+ 'sm': 'screen and (max-width: 576px)',
+ 'md': 'screen and (max-width: 768px)',
+ 'lg': 'screen and (max-width: 992px)',
+ 'xl': 'screen and (max-width: 1200px)'
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォ値はmd
+@mixin mq($breakpoint: md) {
+//map-get(マップ型変数, キー)で値を取得
+  @media #{map-get($breakpoints, $breakpoint)} {
+    //この中をカスタムできる
+    @content;
+  }
+}
+
+.container {
+  width: 90%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.clear::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+
+// header部分
+
+header {
+  padding: 20px 0;
+}
+
+.header-left {
+  font-size: 24px;
+  float: left;
+}
+
+.header-logo {
+  font-weight: bold;
+}
+
+.header-right {
+  float: right;
+}
+
+.header-nav-item {
+  float: left;
+  padding-left: 50px;
+  line-height: 36px;
 }

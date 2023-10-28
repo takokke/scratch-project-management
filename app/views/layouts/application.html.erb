@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TTT Scratch管理</title>
+    <title>みんなのScratchさくひん</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,28 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <div class="container clear">
+        <div class="header-left">
+          <h1 class="header-logo">みんなのScratch</h1>
+        </div>
+        <div class="header-right">
+          <nav>
+            <ul class="header-nav clear">
+              <li class= 'header-nav-item'><%= link_to 'Home', root_path %></li>
+              <li class= 'header-nav-item'><%= link_to 'About', about_path %></li>
+              <li class= 'header-nav-item'><%= link_to 'Sign up', root_path %></li>
+              <li class= 'header-nav-item'><%= link_to 'Login', root_path %></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+
+    </footer>
   </body>
 </html>

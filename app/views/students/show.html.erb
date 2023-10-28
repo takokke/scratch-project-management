@@ -15,12 +15,17 @@
     </thead>
     <tbody>
       <% @projects.each do |project| %>
-      <tr>
-        <td><%= image_tag project['image'] %></td>
-        <td><%= project['title'] %></td>
-        <td><%= project['history']['created'] %></td>
-        <td><%= project['history']['modified'] %></td>
-      </tr>
+          <tr>
+            <td><%= image_tag project['image'] %></td>
+            <td>
+              <%= link_to "https://scratch.mit.edu/projects/#{project['id']}/", target: :_blank, rel: "noopener noreferrer" do %>
+                <%= project['title'] %>
+              <% end %>
+            </td>
+            <td>
+              <%= (Time.parse(project['history']['created']) + 32400).strftime('%Y/%m/%d at %H:%M') %></td>
+            <td><%= (Time.parse(project['history']['modified']) + 32400).strftime('%Y/%m/%d at %H:%M') %></td>
+          </tr>
       <% end %>
     </tbody>
   </table>
